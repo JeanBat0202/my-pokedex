@@ -4,33 +4,24 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 
-
 import PokemonCard from './components/PokemonCard.jsx'
 import { nominalTypeHack } from 'prop-types'
 
-
+import NavBar from './components/NavBar.jsx'
 
 function App(){
 
   const[pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handleNextClick = () => {
-    setPokemonIndex(pokemonIndex +1);
-  };
-  const handlePrevClick = () => {
-    setPokemonIndex(pokemonIndex -1);
-  };
-
   return(
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-     {pokemonIndex > 0 && 
-      (<button onClick={handlePrevClick}>Précédent</button>)}
-     {pokemonIndex < pokemonList.length - 1 && 
-      (<button onClick={handleNextClick}>Suivant</button>)}
+      <NavBar setPokemonIndex={setPokemonIndex} pokemonIndex ={pokemonIndex} pokemonList={pokemonList}/>
     </div>
   );
 }
+
+
 
 const pokemonList = [
   {
