@@ -1,5 +1,5 @@
 import App from "../App.jsx";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 
 
@@ -24,10 +24,10 @@ function PokemonCard({pokemon}){
 }
 
 
-PokemonCard.PropTypes = {
-  pokemon: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string,
+PokemonCard.propTypes = {
+  pokemon: propTypes.shape({
+    name: propTypes.string.isRequired,
+    imgSrc: propTypes.string,
   }).isRequired,
 }
 

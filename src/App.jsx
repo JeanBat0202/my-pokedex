@@ -12,14 +12,23 @@ import NavBar from './components/NavBar.jsx'
 function App(){
 
   const[pokemonIndex, setPokemonIndex] = useState(0);
+  
+  const handleClick = (index) => {
+    setPokemonIndex(index);
+ };
 
   return(
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-      <NavBar setPokemonIndex={setPokemonIndex} pokemonIndex ={pokemonIndex} pokemonList={pokemonList}/>
+      <NavBar pokemonList={pokemonList} pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} handleClick={handleClick} />
     </div>
   );
-}
+} 
+
+
+
+
+
 
 
 
